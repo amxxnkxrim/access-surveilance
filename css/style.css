@@ -1676,10 +1676,10 @@ a {
   }
 
   .service-track {
-    display: block;
-    width: auto;
-    min-width: 0;
-    animation: none;
+    display: flex;
+    width: max-content;
+    min-width: max-content;
+    animation: service-slide 28s linear infinite;
   }
 
   .service-grid {
@@ -1689,7 +1689,7 @@ a {
   }
 
   .service-grid + .service-grid {
-    display: none;
+    display: flex;
   }
 
   .service-card {
