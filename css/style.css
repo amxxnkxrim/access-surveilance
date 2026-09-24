@@ -49,13 +49,11 @@ body.lock-scroll {
   overflow-x: hidden;
 }
 
-body,
 .site-header,
 .hero-section,
 .service-preview,
 .trust-section,
 .cta-section,
-.site-footer,
 .hero-copy,
 .hero-panel,
 .service-card,
@@ -1706,6 +1704,10 @@ a {
     min-height: 240px;
   }
 
+  .trust-panel {
+    display: none;
+  }
+
   .cta-card {
     align-items: stretch;
     flex-direction: column;
@@ -1718,12 +1720,17 @@ a {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px 20px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
 
   .site-footer {
-    padding: 40px 0;
+    padding: 40px 0 28px;
+    margin-bottom: 0;
   }
 
   .stats-grid,
