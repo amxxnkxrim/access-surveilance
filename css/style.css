@@ -299,6 +299,16 @@ a {
     width: min(100%, calc(100vw - 32px));
   }
 
+  .brand {
+    margin-left: 0;
+  }
+
+  .brand-icon,
+  .brand-logo-image {
+    width: 160px;
+    height: 72px;
+  }
+
   .nav-wrap {
     flex-wrap: wrap;
   }
@@ -334,6 +344,12 @@ a {
 
   .header-button {
     display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
   }
 }
 
@@ -1555,6 +1571,156 @@ a {
 }
 
 @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: min(100% - 32px, 560px);
+  }
+
+  .site-header,
+  .nav-wrap {
+    min-height: 76px;
+  }
+
+  .brand-icon,
+  .brand-logo-image {
+    width: 132px;
+    height: 62px;
+  }
+
+  .hero-section {
+    padding: 48px 0 36px;
+  }
+
+  .hero-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(40px, 13vw, 62px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-copy::before {
+    inset: -18px 0 -18px -16px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    margin: 32px 0 0;
+  }
+
+  .hero-actions .btn,
+  .inline-actions .btn,
+  .cta-card .btn-light,
+  .submit-button {
+    width: 100%;
+  }
+
+  .hero-proof {
+    gap: 20px;
+    justify-content: space-between;
+    margin: 32px 0 0;
+  }
+
+  .hero-proof-number {
+    font-size: 26px;
+  }
+
+  .hero-proof-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-panel-card {
+    min-height: 320px;
+    padding: 34px 26px;
+  }
+
+  .hero-panel-card h3 {
+    margin-top: 32px;
+  }
+
+  .service-preview,
+  .trust-section,
+  .cta-section,
+  .content-section {
+    padding: 52px 0;
+  }
+
+  .section-heading h2,
+  .trust-copy-wrap h2,
+  .cta-card h2 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+
+  .service-slider {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-track {
+    display: block;
+    width: auto;
+    min-width: 0;
+    animation: none;
+  }
+
+  .service-grid {
+    gap: 16px;
+    margin-top: 24px;
+    padding-right: 16px;
+  }
+
+  .service-grid + .service-grid {
+    display: none;
+  }
+
+  .service-card {
+    flex-basis: min(82vw, 320px);
+    min-height: 300px;
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .trust-points {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .trust-panel-card {
+    min-height: 240px;
+  }
+
+  .cta-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 24px 28px 28px;
+  }
+
+  .cta-card p {
+    font-size: 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .site-footer {
+    padding: 40px 0;
+  }
+
   .stats-grid,
   .value-grid,
   .process-grid,
@@ -1576,5 +1742,13 @@ a {
   .quote-panel,
   .contact-form-wrap {
     padding: 22px 18px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+  }
+
+  .detail-card h3 {
+    overflow-wrap: anywhere;
   }
 }
