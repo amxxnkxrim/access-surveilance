@@ -1617,7 +1617,7 @@ a {
     align-items: stretch;
     flex-direction: column;
     gap: 12px;
-    margin: 32px 0 0;
+    margin: 96px 0 0;
   }
 
   .hero-actions .btn,
