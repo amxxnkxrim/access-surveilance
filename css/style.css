@@ -1607,9 +1607,14 @@ a {
     overflow-wrap: anywhere;
   }
 
+  .hero-copy {
+    text-align: center;
+  }
+
   .hero-copy::before {
     inset: 120px 0 auto -16px;
     height: 220px;
+    background-position: center center;
   }
 
   .hero-actions {
@@ -1628,7 +1633,7 @@ a {
 
   .hero-proof {
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     margin: 32px 0 0;
   }
 
