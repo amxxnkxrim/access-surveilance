@@ -1679,7 +1679,7 @@ a {
     display: flex;
     width: max-content;
     min-width: max-content;
-    animation: service-slide 28s linear infinite;
+    animation: service-slide 60s linear infinite;
   }
 
   .service-grid {
