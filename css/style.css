@@ -38,6 +38,7 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 html {
@@ -423,6 +424,7 @@ a {
   font-weight: 900;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 .hero-green-word {
   color: #2C8D58;
@@ -1490,6 +1492,7 @@ a {
 .field textarea,
 .field select {
   width: 100%;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #f8faf8;
@@ -1549,6 +1552,11 @@ a {
 }
 
 @media (max-width: 980px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
   .stats-grid,
   .value-grid,
   .service-grid-page,
@@ -1571,10 +1579,6 @@ a {
 }
 
 @media (max-width: 700px) {
-  body {
-    overflow-x: hidden;
-  }
-
   .container {
     width: min(100% - 32px, 560px);
   }
