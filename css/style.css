@@ -1708,6 +1708,10 @@ a {
     display: none;
   }
 
+  .hero-panel {
+    display: none;
+  }
+
   .cta-card {
     align-items: stretch;
     flex-direction: column;
