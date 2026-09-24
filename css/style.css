@@ -1610,7 +1610,7 @@ a {
   }
 
   .hero-copy::before {
-    inset: -18px 0 -18px -16px;
+    inset: -18px 0 46px -16px;
   }
 
   .hero-actions {
