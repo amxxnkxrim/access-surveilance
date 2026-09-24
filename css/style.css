@@ -1225,6 +1225,12 @@ a {
   padding: 76px 0 32px;
 }
 
+.about-page-hero {
+  background-image: linear-gradient(135deg, rgba(9, 28, 22, 0.78), rgba(33, 65, 52, 0.58)), url("../images/electric-fence-installation.webp");
+  background-position: center;
+  background-size: cover;
+}
+
 .page-hero-inner {
   display: flex;
   align-items: center;
