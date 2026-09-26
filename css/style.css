@@ -1226,9 +1226,70 @@ a {
 }
 
 .about-page-hero {
+  background: transparent;
+}
+
+.about-hero-intro {
   background-image: linear-gradient(135deg, rgba(9, 28, 22, 0.78), rgba(33, 65, 52, 0.58)), url("../images/electric-fence-installation.webp");
-  background-position: center;
+  background-position: center top;
   background-size: cover;
+}
+
+.about-hero-intro .info-card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+.about-hero-intro .info-card h2,
+.about-hero-intro .info-card p,
+.about-hero-intro .info-card .check-list li {
+  color: var(--white);
+}
+
+.about-hero-intro .info-card p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about-hero-intro .eyebrow,
+.about-hero-intro .section-tag,
+.about-hero-intro .mini-label {
+  color: var(--white);
+}
+
+.about-page-hero .btn-primary {
+  background: var(--white);
+  color: var(--charcoal);
+}
+
+.about-page-hero .about-word-access,
+.about-page-hero .about-word-surveillance {
+  color: var(--white);
+  -webkit-text-stroke: 2px currentColor;
+  paint-order: stroke fill;
+}
+
+.about-page-hero .about-word-access {
+  -webkit-text-stroke-color: #2c8d58;
+  text-shadow: 0 0 8px rgba(44, 141, 88, 0.95), 0 0 18px rgba(44, 141, 88, 0.7);
+}
+
+.about-page-hero .about-word-surveillance {
+  -webkit-text-stroke-color: var(--red);
+  text-shadow: 0 0 8px rgba(185, 31, 38, 0.95), 0 0 18px rgba(185, 31, 38, 0.7);
+}
+
+.about-page-hero .btn-secondary {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.about-page-hero .btn-primary:hover,
+.about-page-hero .btn-secondary:hover {
+  background: var(--white);
+  color: var(--charcoal);
 }
 
 .page-hero-inner {
@@ -1383,6 +1444,121 @@ a {
 .value-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 30px;
+}
+
+.brand-subsections {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+}
+
+.brand-subsection {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  column-gap: 28px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+
+.brand-subsection-number {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  padding-top: 6px;
+}
+
+.brand-subsection h3 {
+  grid-column: 2;
+  color: var(--charcoal);
+  font-size: 22px;
+  margin: 10px 0 8px;
+}
+
+.brand-subsection p {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cctv-brand-showcase,
+.access-brand-showcase {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.access-brand-showcase {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.automation-brand-showcase {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.garage-brand-showcase {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.fencing-brand-showcase {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.alarm-brand-showcase {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 240px;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.cctv-brand-card {
+  position: relative;
+  min-height: 112px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--charcoal);
+}
+
+.cctv-brand-card img {
+  display: block;
+  width: 100%;
+  height: 112px;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.cctv-brand-card figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 8px;
+  background: rgba(9, 28, 22, 0.82);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .feature-card {
@@ -1750,10 +1926,32 @@ a {
 
   .stats-grid,
   .value-grid,
+  .brand-subsections,
   .process-grid,
   .service-grid-page,
   .field-row {
     grid-template-columns: 1fr;
+  }
+
+  .brand-subsection {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  .brand-subsection-number,
+  .brand-subsection h3,
+  .brand-subsection p,
+  .cctv-brand-showcase,
+  .access-brand-showcase,
+  .automation-brand-showcase,
+  .garage-brand-showcase,
+  .fencing-brand-showcase,
+  .alarm-brand-showcase {
+    grid-column: 1;
+  }
+
+  .brand-subsection-number {
+    grid-row: auto;
   }
 
   .page-hero {
