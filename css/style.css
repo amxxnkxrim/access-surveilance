@@ -118,6 +118,11 @@ body.lock-scroll {
   clip-path: inset(0);
 }
 
+.site-header.reveal,
+.site-header.reveal.is-visible {
+  clip-path: none;
+}
+
 .reveal--fade {
   transform: none;
 }
