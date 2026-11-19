@@ -2,6 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.querySelector(".main-nav");
   const serviceSlider = document.querySelector(".service-slider");
+  const feedbackForm = document.querySelector(".feedback-form");
+
+  if (feedbackForm) {
+    const feedbackStatus = feedbackForm.querySelector(".feedback-status");
+    feedbackForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const feedbackData = new FormData(feedbackForm);
+      const category = String(feedbackData.get("category") || "General feedback");
+      const rating = String(feedbackData.get("rating") || "Not provided");
+      const name = String(feedbackData.get("name") || "Not provided");
+      const email = String(feedbackData.get("email") || "Not provided");
+      const message = String(feedbackData.get("feedback") || "").trim();
+      const subject = "Customer feedback: " + category;
+      const body = [
+        "Category: " + category,
+        "Rating: " + rating,
+        "Name: " + name,
+        "Email: " + email,
+        "",
+        "Feedback:",
+        message
+      ].join("\r\n");
+
+      feedbackStatus.textContent = "Your email app should open with your feedback ready. Review it and press Send to submit.";
+      window.location.href = "mailto:rehan@access-surveilance.co.za?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  }
 
   const chatLauncher = document.createElement("button");
   chatLauncher.className = "faq-chat-launcher";
@@ -35,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     '  <button type="button">How do I get a quote?</button>',
     '  <button type="button">Where do you provide service?</button>',
     '  <button type="button">How can I contact you?</button>',
+    '  <button type="button" data-chat-navigation="feedback.html">Share feedback</button>',
     '</div>',
     '<form class="faq-chat-form">',
     '  <label class="faq-chat-label" for="faq-chat-input">Your question</label>',
@@ -121,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   let websiteContentPromise;
-  const sitePages = ["index.html", "about.html", "services.html", "enquiry.html", "contact.html"];
+  const sitePages = ["index.html", "about.html", "services.html", "enquiry.html", "contact.html", "feedback.html"];
   if (window.location.protocol === "file:") {
     indexWebsitePage(document.documentElement.outerHTML, document.title);
     chatStatus.textContent = "Local preview: current page only";
@@ -166,6 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const normalizedQuestion = question.toLowerCase().replace(/\s+/g, " ").trim();
     if (/^(hi|hello|hey|good morning|good afternoon)\b/.test(normalizedQuestion)) {
       return "Hello! Ask me anything about the information on this website.";
+    }
+    if (/\b(feedback|review|suggestion)\b/.test(normalizedQuestion)) {
+      return "You can share feedback on our Feedback page. Select “Share feedback” in this chat to open the form.";
     }
 
     const queryTerms = Array.from(new Set(getSearchTokens(question)));
@@ -256,8 +288,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   chatPanel.querySelector(".faq-chat-suggestions").addEventListener("click", function (event) {
-    if (event.target.tagName !== "BUTTON") return;
-    askChatQuestion(event.target.textContent);
+    const suggestion = event.target.closest("button");
+    if (!suggestion) return;
+    if (suggestion.dataset.chatNavigation) {
+      window.location.href = suggestion.dataset.chatNavigation;
+      return;
+    }
+    askChatQuestion(suggestion.textContent);
     chatInput.focus();
   });
 

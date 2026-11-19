@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback | Access Surveillance</title>
+    <link rel="stylesheet" href="css/style.css?v=feedback-page-2">
+</head>
+<body>
+    <div class="site-header-wrap">
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a class="brand" href="index.html" aria-label="Access Surveillance">
+                    <span class="brand-mark">
+                        <span class="brand-icon">
+                            <img class="brand-logo-image" src="images/access logo.jpeg" alt="Access Surveillance logo">
+                        </span>
+                    </span>
+                </a>
+
+                <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="main-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="services.html">Services</a>
+                    <a class="nav-link" href="enquiry.html">Enquiry</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link active" href="feedback.html" aria-current="page">Feedback</a>
+                </nav>
+
+                <a class="header-button" href="enquiry.html">Get your free quote</a>
+            </div>
+        </header>
+    </div>
+
+    <main class="page-main">
+        <section class="page-hero feedback-page-hero">
+            <div class="container page-hero-inner">
+                <div class="page-hero-copy">
+                    <span class="eyebrow">Customer feedback</span>
+                    <h1>Your feedback helps us improve.</h1>
+                    <p>Tell us about your experience with Access Surveillance. We read every response and use it to improve our service.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="feedback-layout">
+                <aside class="feedback-aside" aria-labelledby="feedback-aside-title">
+                    <span class="feedback-aside-kicker">How it works</span>
+                    <h2 id="feedback-aside-title">A better experience starts with listening.</h2>
+                    <ol class="feedback-process">
+                        <li>
+                            <span class="feedback-process-number" aria-hidden="true">01</span>
+                            <div>
+                                <strong>Share your experience</strong>
+                                <p>Tell us what went well or what we could improve.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feedback-process-number" aria-hidden="true">02</span>
+                            <div>
+                                <strong>Rate the service</strong>
+                                <p>Choose the topic and rating that best fit your feedback.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feedback-process-number" aria-hidden="true">03</span>
+                            <div>
+                                <strong>Review before sending</strong>
+                                <p>Your email app opens with the details ready for you to review.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="feedback-aside-note">
+                        <strong>Your choice, every step</strong>
+                        <p>Your feedback is sent only after you press Send in your email app.</p>
+                    </div>
+                </aside>
+                <div class="contact-form-wrap feedback-form-wrap">
+                    <form class="contact-form feedback-form" action="mailto:rehan@access-surveilance.co.za" method="post" enctype="text/plain">
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="feedback-category">Feedback about</label>
+                                <select id="feedback-category" name="category">
+                                    <option value="Overall experience">Overall experience</option>
+                                    <option value="Installation or service">Installation or service</option>
+                                    <option value="Communication and support">Communication and support</option>
+                                    <option value="Website">Website</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="feedback-rating">How was your experience?</label>
+                                <select id="feedback-rating" name="rating" required>
+                                    <option value="" selected disabled>Choose a rating</option>
+                                    <option value="5 - Excellent">5 - Excellent</option>
+                                    <option value="4 - Very good">4 - Very good</option>
+                                    <option value="3 - Good">3 - Good</option>
+                                    <option value="2 - Fair">2 - Fair</option>
+                                    <option value="1 - Needs improvement">1 - Needs improvement</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="feedback-name">Name (optional)</label>
+                                <input id="feedback-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+                            </div>
+                            <div class="field">
+                                <label for="feedback-email">Email (optional)</label>
+                                <input id="feedback-email" name="email" type="email" autocomplete="email" placeholder="Your email address">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="feedback-message">Your feedback</label>
+                            <textarea id="feedback-message" name="feedback" rows="7" maxlength="1500" placeholder="Tell us what went well or what we could improve." required></textarea>
+                        </div>
+                        <p class="feedback-handoff-note">Continue to open your email app with your feedback addressed to our team. Review the message and press Send; it is not sent until you do.</p>
+                        <button class="submit-button" type="submit">Continue to email</button>
+                        <p class="feedback-status" role="status" aria-live="polite"></p>
+                        <p class="feedback-contact-note">If your email app does not open, email us at <a href="mailto:rehan@access-surveilance.co.za">rehan@access-surveilance.co.za</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-brand" href="index.html">Access Surveillance</a>
+                <p>Professional security systems for homes, offices, estates and commercial sites.</p>
+            </div>
+            <div>
+                <span class="footer-title">Services</span>
+                <ul class="footer-links">
+                    <li><a href="services.html">CCTV & Surveillance</a></li>
+                    <li><a href="services.html">Access Control</a></li>
+                    <li><a href="services.html">Alarm Systems</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-title">Company</span>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js?v=faq-chat-8"></script>
+</body>
+</html>
